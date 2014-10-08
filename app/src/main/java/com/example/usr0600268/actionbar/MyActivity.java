@@ -1,6 +1,7 @@
 package com.example.usr0600268.actionbar;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +30,7 @@ public class MyActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.action_search:
+                openSearch();
                 return true;
             case R.id.action_settings:
                 return true;
@@ -36,4 +38,11 @@ public class MyActivity extends Activity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    private void openSearch() {
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        startActivity(intent);
+    }
+
+
 }
